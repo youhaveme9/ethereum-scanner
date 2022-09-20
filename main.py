@@ -4,6 +4,9 @@ import os
 import requests
 import matplotlib.pyplot as plt
 from dotenv import load_dotenv
+import tkinter as tk
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 
 
 class EthScan:
@@ -27,8 +30,11 @@ class EthScan:
         data = response.json()
         return int(data['result']) / 10**18
 
-    # def get_transaction(self, address):
+root = ttk.Window(themename="darkly")
+l1 = ttk.Label(bootstyle="success", text="Hello")
+l1.pack(side=LEFT, padx=5, pady=10)
 
+root.mainloop()
 
 load_dotenv()
 address = "0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"
